@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image for backend
-FROM node:20.0.0-alpine AS backend
+FROM node:20.0.0-alpine
 
 # Set the working directory for backend
 WORKDIR /app/quirknotes/backend
@@ -13,8 +13,8 @@ RUN npm install
 # Copy backend source code
 COPY quirknotes/backend ./
 
-# Your backend might use a different port. Adjust as needed.
+# Your backend application port (adjust if different)
 EXPOSE 4000
 
 # Define the command to run your backend application
-CMD ["node", "app.js"] # Replace "app.js" with your backend's main file
+CMD ["node", "server.js"]
